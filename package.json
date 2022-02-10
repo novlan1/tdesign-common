@@ -55,7 +55,7 @@
     "jest-watch-typeahead": "^0.6.1",
     "lint-staged": "~12.1.2",
     "min-indent": "^1.0.1",
-    "postcss-less": "^5.0.0",
+    "postcss-less": "^6.0.0",
     "stylelint": "^14.1.0",
     "stylelint-config-standard": "^24.0.0",
     "ts-jest": "^26.0.0",
@@ -83,7 +83,10 @@
   },
   "lint-staged": {
     "**/*.{css,wxss,less}": [
-      "npm run lint:css && npm run lint:js"
+      "stylelint"
+    ],
+    "**/*.{js,ts}": [
+      "eslint --max-warnings 0"
     ]
   }
 }
