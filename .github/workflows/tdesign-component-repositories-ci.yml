@@ -29,6 +29,12 @@ jobs:
     if: github.event.workflow_run.conclusion == 'success'
     needs: pr-context
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        script:
+          - lint
+          - test
+          - build
     steps:
       - name: Checkout tdesign-vue
         uses: actions/checkout@v4
@@ -46,14 +52,18 @@ jobs:
           node-version: 18
 
       - run: npm install
-      - run: npm run lint
-      - run: npm run test
-      - run: npm run build
+      - run: npm run ${{ matrix.script }}
 
   tdesign-vue-next:
     if: github.event.workflow_run.conclusion == 'success'
-    runs-on: ubuntu-latest
     needs: pr-context
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        script:
+          - lint
+          - test
+          - build
     steps:
       - name: Checkout tdesign-vue-next
         uses: actions/checkout@v4
@@ -74,14 +84,18 @@ jobs:
           cache: 'pnpm'
 
       - run: pnpm install  --frozen-lockfile
-      - run: pnpm run lint
-      - run: pnpm run test
-      - run: pnpm run build
+      - run: pnpm run ${{ matrix.script }}
 
   tdesign-react:
     if: github.event.workflow_run.conclusion == 'success'
-    runs-on: ubuntu-latest
     needs: pr-context
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        script:
+          - lint
+          - test
+          - build
     steps:
       - name: Checkout tdesign-react
         uses: actions/checkout@v4
@@ -99,14 +113,18 @@ jobs:
           node-version: 18
 
       - run: npm install
-      - run: npm run lint
-      - run: npm run test
-      - run: npm run build
+      - run: npm run ${{ matrix.script }}
 
   tdesign-web-components:
     if: github.event.workflow_run.conclusion == 'success'
-    runs-on: ubuntu-latest
     needs: pr-context
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        script:
+          - lint
+          - test
+          - build
     steps:
       - name: Checkout tdesign-web-components
         uses: actions/checkout@v4
@@ -124,14 +142,18 @@ jobs:
           node-version: 18
 
       - run: npm install
-      - run: npm run lint
-      - run: npm run test
-      - run: npm run build
+      - run: npm run ${{ matrix.script }}
 
   tdesign-mobile-vue:
     if: github.event.workflow_run.conclusion == 'success'
-    runs-on: ubuntu-latest
     needs: pr-context
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        script:
+          - lint
+          - test
+          - build
     steps:
       - name: Checkout tdesign-mobile-vue
         uses: actions/checkout@v4
@@ -149,14 +171,18 @@ jobs:
           node-version: 18
 
       - run: npm install
-      - run: npm run lint
-      - run: npm run test
-      - run: npm run build
+      - run: npm run ${{ matrix.script }}
 
   tdesign-mobile-react:
     if: github.event.workflow_run.conclusion == 'success'
-    runs-on: ubuntu-latest
     needs: pr-context
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        script:
+          - lint
+          - test
+          - build
     steps:
       - name: Checkout tdesign-mobile-react
         uses: actions/checkout@v4
@@ -174,9 +200,7 @@ jobs:
           node-version: 18
 
       - run: npm install
-      - run: npm run lint
-      - run: npm run test
-      - run: npm run build
+      - run: npm run ${{ matrix.script }}
       
   pr-comment:
     if: always()
@@ -200,23 +224,50 @@ jobs:
               run_id: context.runId,
               per_page: 100
             })
+            const ciJob = {
+              lint_status: "",
+              lint_job: "",
+              test_status: "",
+              test_job: "",
+              build_status: "",
+              build_job: "",
+            };
+            const tdesign = {
+              "tdesign-vue": { ...ciJob },
+              "tdesign-vue-next": { ...ciJob },
+              "tdesign-react": { ...ciJob },
+              "tdesign-web-components": { ...ciJob },
+              "tdesign-mobile-vue": { ...ciJob },
+              "tdesign-mobile-react": { ...ciJob },
+            };
+            jobs
+              .filter((job) => job.name.startsWith("tdesign-"))
+              .map((job) => {
+                const status = job.conclusion === "success" ? "✅" : "❌";
+                // job.name 'tdesign-vue (build)'
+                const regex = /^(\S+)\s+\((\S+)\)$/;
+                const match = job.name.match(regex);
+                tdesign[match[1]][`${match[2]}_status`] = status;
+                tdesign[match[1]][`${match[2]}_job`] = job.html_url;
+              });
 
-            const tdesign = jobs.filter(job => job.name.startsWith('tdesign-'))
+            const runUrl = `${context.serverUrl}//${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
 
-            const run_url = `${context.serverUrl}//${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`
-            
-            const comment =`
-            # TDesign Component Repositories CI Test [Open](${run_url})
-            | Component | Status | Job  |
-            | --------- | :----: | :--: |
-            ${tdesign.map(job => {
-              const status = job.conclusion === 'success' ? '✅' : '❌';
-              return `| ${job.name} | ${status} | [Open](${job.html_url}) |`
-              console.log(job.name, process.env[job.name]);
-            }).join("\n")}
+            const comment = `
+              # TDesign Component Repositories CI Test [Open](${runUrl})
+              | Component | Lint | Test | Build |
+              | --------- | :--: | :--: | :----: |
+              ${Object.keys(tdesign)
+                .map((component) => {
+                  const lint_text = `[${tdesign[component].lint_status}](${tdesign[component].lint_job})`;
+                  const test_text = `[${tdesign[component].test_status}](${tdesign[component].test_job})`;
+                  const build_text = `[${tdesign[component].build_status}](${tdesign[component].build_job})`;
+                  return `| ${component} | ${lint_text} | ${test_text} | ${build_text} |`;
+                })
+                .join("\n")}
 
-            <!-- TDesign Component Repositories CI Test -->
-            `
+              <!-- TDesign Component Repositories CI Test -->
+              `;
             
             core.setOutput('comment', comment);
       
