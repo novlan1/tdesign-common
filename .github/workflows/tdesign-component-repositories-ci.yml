@@ -30,6 +30,7 @@ jobs:
     needs: pr-context
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
         script:
           - lint
@@ -59,6 +60,7 @@ jobs:
     needs: pr-context
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
         script:
           - lint
@@ -91,6 +93,7 @@ jobs:
     needs: pr-context
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
         script:
           - lint
@@ -120,6 +123,7 @@ jobs:
     needs: pr-context
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
         script:
           - lint
@@ -149,6 +153,7 @@ jobs:
     needs: pr-context
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
         script:
           - lint
@@ -178,6 +183,7 @@ jobs:
     needs: pr-context
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
         script:
           - lint
@@ -204,7 +210,8 @@ jobs:
       
   pr-comment:
     if: always()
-    needs: 
+    needs:
+      - pr-context
       - tdesign-vue
       - tdesign-vue-next
       - tdesign-react
@@ -251,7 +258,7 @@ jobs:
                 tdesign[match[1]][`${match[2]}_job`] = job.html_url;
               });
 
-            const runUrl = `${context.serverUrl}//${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
+            const runUrl = `${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
 
             const comment = `
               # TDesign Component Repositories CI Test [Open](${runUrl})
