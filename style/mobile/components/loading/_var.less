@@ -1,11 +1,11 @@
 @loading: ~"@{prefix}-loading";
 
-@loading-color: var(--td-loading-color, @brand-color);
-@loading-size: var(--td-loading-size, 20px);
-@loading-text-color: var(--td-loading-text-color, @text-color-primary);
-@loading-text-font-size: var(--td-loading-text-font-size, 12px);
-@loading-text-line-height: var(--td-loading-text-line-height, 20px);
-@loading-dot-size: var(--td-loading-dot-size, 8px);
-@loading-line-bg-color: var(--td-loading-line-bg-color, @text-color-primary);
-@loading-z-index: var(--td-loading-z-index, 3500);
-@loading-full-bg-color: var(--td-loading-full-bg-color, rgba(255, 255, 255, 60%));
+@loading-color: if(isdefined(@td-loading-color), @td-loading-color, @brand-color);
+@loading-size: if(isdefined(@td-loading-size), @td-loading-size, 20px);
+@loading-text-color: if(isdefined(@td-loading-text-color), @td-loading-text-color, @text-color-primary);
+@loading-text-font-size: if(isdefined(@td-loading-text-font-size), @td-loading-text-font-size, 12px);
+@loading-text-line-height: if(isdefined(@td-loading-text-line-height), @td-loading-text-line-height, 20px);
+@loading-dot-size: if(isdefined(@td-loading-dot-size), @td-loading-dot-size, 8px);
+@loading-line-bg-color: if(isdefined(@td-loading-line-bg-color), @td-loading-line-bg-color, @text-color-primary);
+@loading-z-index: if(isdefined(@td-loading-z-index), @td-loading-z-index, 3500);
+@loading-full-bg-color: if(isdefined(@td-loading-full-bg-color), @td-loading-full-bg-color, rgba(255, 255, 255, 60%));

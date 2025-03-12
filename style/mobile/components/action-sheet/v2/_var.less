@@ -1,15 +1,15 @@
 @action-sheet: ~"@{prefix}-action-sheet";
 
-@action-sheet-list-item-height: var(--td-action-sheet-list-item-height, 56px);
-@action-sheet-list-item-disabled-color: var(--td-action-sheet-list-item-disabled-color, @text-color-disabled);
-@action-sheet-border-color: var(--td-action-sheet-border-color, @component-stroke);
-@action-sheet-color: var(--td-action-sheet-color, @text-color-primary);
-@action-sheet-border-radius: var(--td-action-sheet-border-radius, @radius-extra-large);
-@action-sheet-description-color: var(--td-action-sheet-description-color, @text-color-placeholder);
-@action-sheet-text-align: var(--td-action-sheet-text-align, center);
-@action-sheet-cancel-height: var(--td-action-sheet-cancel-height, 48px);
-@action-sheet-dot-size: var(--td-action-sheet-dot-size, 8px);
-@action-sheet-dot-color: var(--td-action-sheet-dot-color, @text-color-disabled);
-@action-sheet-dot-active-color: var(--td-action-sheet-dot-active-color, @brand-color);
-@action-sheet-text-weight: var(--td-action-sheet-text-weight, 400);
-@action-sheet-gap-color: var(--td-action-sheet-gap-color, var(--td-bg-color-page, @component-stroke));
+@action-sheet-list-item-height: if(isdefined(@td-action-sheet-list-item-height), @td-action-sheet-list-item-height, 56px);
+@action-sheet-list-item-disabled-color: if(isdefined(@td-action-sheet-list-item-disabled-color), @td-action-sheet-list-item-disabled-color, @text-color-disabled);
+@action-sheet-border-color: if(isdefined(@td-action-sheet-border-color), @td-action-sheet-border-color, @component-stroke);
+@action-sheet-color: if(isdefined(@td-action-sheet-color), @td-action-sheet-color, @text-color-primary);
+@action-sheet-border-radius: if(isdefined(@td-action-sheet-border-radius), @td-action-sheet-border-radius, @radius-extra-large);
+@action-sheet-description-color: if(isdefined(@td-action-sheet-description-color), @td-action-sheet-description-color, @text-color-placeholder);
+@action-sheet-text-align: if(isdefined(@td-action-sheet-text-align), @td-action-sheet-text-align, center);
+@action-sheet-cancel-height: if(isdefined(@td-action-sheet-cancel-height), @td-action-sheet-cancel-height, 48px);
+@action-sheet-dot-size: if(isdefined(@td-action-sheet-dot-size), @td-action-sheet-dot-size, 8px);
+@action-sheet-dot-color: if(isdefined(@td-action-sheet-dot-color), @td-action-sheet-dot-color, @text-color-disabled);
+@action-sheet-dot-active-color: if(isdefined(@td-action-sheet-dot-active-color), @td-action-sheet-dot-active-color, @brand-color);
+@action-sheet-text-weight: if(isdefined(@td-action-sheet-text-weight), @td-action-sheet-text-weight, 400);
+@action-sheet-gap-color: if(isdefined(@td-action-sheet-gap-color), @td-action-sheet-gap-color, var(--td-bg-color-page, @component-stroke));

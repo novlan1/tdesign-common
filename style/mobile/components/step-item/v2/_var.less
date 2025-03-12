@@ -1,34 +1,34 @@
-@step-item-dot-size: var(--td-step-item-dot-size, 8px);
-@step-item-circle-size: var(--td-step-item-circle-size, 22px);
-@step-item-circle-font-size: var(--td-step-item-circle-font-size, 14px);
-@step-item-description-color: var(--td-step-item-description-color, @text-color-placeholder);
+@step-item-dot-size: if(isdefined(@td-step-item-dot-size), @td-step-item-dot-size, 8px);
+@step-item-circle-size: if(isdefined(@td-step-item-circle-size), @td-step-item-circle-size, 22px);
+@step-item-circle-font-size: if(isdefined(@td-step-item-circle-font-size), @td-step-item-circle-font-size, 14px);
+@step-item-description-color: if(isdefined(@td-step-item-description-color), @td-step-item-description-color, @text-color-placeholder);
 
-@step-item-default-circle-bg: var(--td-step-item-default-circle-bg, @bg-color-secondarycontainer);
-@step-item-default-circle-color: var(--td-step-item-default-circle-color, @text-color-placeholder);
-@step-item-default-title-color: var(--td-step-item-default-title-color, @text-color-placeholder);
-@step-item-default-icon-color: var(--td-step-item-default-icon-color, @text-color-placeholder);
-@step-item-default-dot-border-color: var(--td-step-item-default-dot-border-color, @component-border);
+@step-item-default-circle-bg: if(isdefined(@td-step-item-default-circle-bg), @td-step-item-default-circle-bg, @bg-color-secondarycontainer);
+@step-item-default-circle-color: if(isdefined(@td-step-item-default-circle-color), @td-step-item-default-circle-color, @text-color-placeholder);
+@step-item-default-title-color: if(isdefined(@td-step-item-default-title-color), @td-step-item-default-title-color, @text-color-placeholder);
+@step-item-default-icon-color: if(isdefined(@td-step-item-default-icon-color), @td-step-item-default-icon-color, @text-color-placeholder);
+@step-item-default-dot-border-color: if(isdefined(@td-step-item-default-dot-border-color), @td-step-item-default-dot-border-color, @component-border);
 
-@step-item-process-circle-color: var(--td-step-item-process-circle-color, @font-white-1);
-@step-item-process-circle-bg: var(--td-step-item-process-circle-bg, @brand-color);
-@step-item-process-title-color: var(--td-step-item-process-title-color, @brand-color);
-@step-item-process-icon-color: var(--td-step-item-process-icon-color, @brand-color);
-@step-item-process-dot-border-color: var(--td-step-item-process-dot-border-color, @brand-color);
+@step-item-process-circle-color: if(isdefined(@td-step-item-process-circle-color), @td-step-item-process-circle-color, @font-white-1);
+@step-item-process-circle-bg: if(isdefined(@td-step-item-process-circle-bg), @td-step-item-process-circle-bg, @brand-color);
+@step-item-process-title-color: if(isdefined(@td-step-item-process-title-color), @td-step-item-process-title-color, @brand-color);
+@step-item-process-icon-color: if(isdefined(@td-step-item-process-icon-color), @td-step-item-process-icon-color, @brand-color);
+@step-item-process-dot-border-color: if(isdefined(@td-step-item-process-dot-border-color), @td-step-item-process-dot-border-color, @brand-color);
 
-@step-item-finish-circle-color: var(--td-step-item-finish-circle-color, @brand-color);
-@step-item-finish-circle-bg: var(--td-step-item-finish-circle-bg, @brand-color-light);
-@step-item-finish-title-color: var(--td-step-item-finish-title-color, @text-color-primary);
-@step-item-finish-icon-color: var(--td-step-item-finish-icon-color, @brand-color);
-@step-item-finish-dot-border-color: var(--td-step-item-finish-dot-border-color, @brand-color);
+@step-item-finish-circle-color: if(isdefined(@td-step-item-finish-circle-color), @td-step-item-finish-circle-color, @brand-color);
+@step-item-finish-circle-bg: if(isdefined(@td-step-item-finish-circle-bg), @td-step-item-finish-circle-bg, @brand-color-light);
+@step-item-finish-title-color: if(isdefined(@td-step-item-finish-title-color), @td-step-item-finish-title-color, @text-color-primary);
+@step-item-finish-icon-color: if(isdefined(@td-step-item-finish-icon-color), @td-step-item-finish-icon-color, @brand-color);
+@step-item-finish-dot-border-color: if(isdefined(@td-step-item-finish-dot-border-color), @td-step-item-finish-dot-border-color, @brand-color);
 
-@step-item-error-circle-color: var(--td-step-item-error-circle-color, @error-color);
-@step-item-error-circle-bg: var(--td-step-item-error-circle-bg, @error-color-1);
-@step-item-error-title-color: var(--td-step-item-error-title-color, @error-color);
-@step-item-error-icon-color: var(--td-step-item-error-icon-color, @error-color);
-@step-item-error-dot-border-color: var(--td-step-item-error-dot-border-color, @error-color);
+@step-item-error-circle-color: if(isdefined(@td-step-item-error-circle-color), @td-step-item-error-circle-color, @error-color);
+@step-item-error-circle-bg: if(isdefined(@td-step-item-error-circle-bg), @td-step-item-error-circle-bg, @error-color-1);
+@step-item-error-title-color: if(isdefined(@td-step-item-error-title-color), @td-step-item-error-title-color, @error-color);
+@step-item-error-icon-color: if(isdefined(@td-step-item-error-icon-color), @td-step-item-error-icon-color, @error-color);
+@step-item-error-dot-border-color: if(isdefined(@td-step-item-error-dot-border-color), @td-step-item-error-dot-border-color, @error-color);
 
-@step-item-line-color: var(--td-step-item-line-color, @component-border);
-@step-item-finish-line-color: var(--td-step-item-finish-line-color, @brand-color);
+@step-item-line-color: if(isdefined(@td-step-item-line-color), @td-step-item-line-color, @component-border);
+@step-item-finish-line-color: if(isdefined(@td-step-item-finish-line-color), @td-step-item-finish-line-color, @brand-color);
 
 @step: ~"@{prefix}-step";
 @steps: ~"@{step}s";

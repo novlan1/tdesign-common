@@ -12,8 +12,8 @@
 @stepper-large-input-width: 45px;
 @stepper-border-width: 1px;
 
-@stepper-border-radius: var(--td-stepper-border-radius, @radius-small);
-@stepper-border-color: var(--td-stepper-border-color, @component-border);
-@stepper-input-color: var(--td-stepper-input-color, @text-color-primary);
-@stepper-input-disabled-color: var(--td-stepper-input-disabled-color, @text-color-disabled);
-@stepper-input-disabled-bg: var(--td-stepper-input-disabled-bg, @bg-color-component-disabled);
+@stepper-border-radius: if(isdefined(@td-stepper-border-radius), @td-stepper-border-radius, @radius-small);
+@stepper-border-color: if(isdefined(@td-stepper-border-color), @td-stepper-border-color, @component-border);
+@stepper-input-color: if(isdefined(@td-stepper-input-color), @td-stepper-input-color, @text-color-primary);
+@stepper-input-disabled-color: if(isdefined(@td-stepper-input-disabled-color), @td-stepper-input-disabled-color, @text-color-disabled);
+@stepper-input-disabled-bg: if(isdefined(@td-stepper-input-disabled-bg), @td-stepper-input-disabled-bg, @bg-color-component-disabled);

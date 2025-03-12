@@ -1,4 +1,4 @@
 @import "../../grid-item/v2/_var.less";
 
-@grid-bg-color: var(--td-grid-bg-color, @bg-color-container);
-@grid-card-radius: var(--td-grid-card-radius, @radius-large);
+@grid-bg-color: if(isdefined(@td-grid-bg-color), @td-grid-bg-color, @bg-color-container);
+@grid-card-radius: if(isdefined(@td-grid-card-radius), @td-grid-card-radius, @radius-large);

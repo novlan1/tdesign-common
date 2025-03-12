@@ -1,16 +1,16 @@
 @cascader: ~"@{prefix}-cascader";
 
-@cascader-bg-color: var(--td-cascader-bg-color, @bg-color-container);
-@cascader-active-color: var(--td-cascader-active-color, @brand-color);
-@cascader-disabled-color: var(--td-cascader-disabled-color, @text-color-disabled);
-@cascader-title-color: var(--td-cascader-title-color, @text-color-primary);
-@cascader-options-title-color: var(--td-cascader-options-title-color, @text-color-placeholder);
-@cascader-border-color: var(--td-cascader-border-color, @border-color);
+@cascader-bg-color: if(isdefined(@td-cascader-bg-color), @td-cascader-bg-color, @bg-color-container);
+@cascader-active-color: if(isdefined(@td-cascader-active-color), @td-cascader-active-color, @brand-color);
+@cascader-disabled-color: if(isdefined(@td-cascader-disabled-color), @td-cascader-disabled-color, @text-color-disabled);
+@cascader-title-color: if(isdefined(@td-cascader-title-color), @td-cascader-title-color, @text-color-primary);
+@cascader-options-title-color: if(isdefined(@td-cascader-options-title-color), @td-cascader-options-title-color, @text-color-placeholder);
+@cascader-border-color: if(isdefined(@td-cascader-border-color), @td-cascader-border-color, @border-color);
 
-@cascader-options-height: var(--td-cascader-options-height, 320px);
-@cascder-title-font-size: var(--td-cascder-title-font-size, 18px);
+@cascader-options-height: if(isdefined(@td-cascader-options-height), @td-cascader-options-height, 320px);
+@cascder-title-font-size: if(isdefined(@td-cascder-title-font-size), @td-cascder-title-font-size, 18px);
 
 // steps
-@cascader-step-height: var(--td-cascader-step-height, 44px);
-@cascader-step-dot-size: var(--td-cascader-step-dot-size, 8px);
-@cascader-step-arrow-color: var(--td-cascader-step-arrow-color, @text-color-placeholder);
+@cascader-step-height: if(isdefined(@td-cascader-step-height), @td-cascader-step-height, 44px);
+@cascader-step-dot-size: if(isdefined(@td-cascader-step-dot-size), @td-cascader-step-dot-size, 8px);
+@cascader-step-arrow-color: if(isdefined(@td-cascader-step-arrow-color), @td-cascader-step-arrow-color, @text-color-placeholder);

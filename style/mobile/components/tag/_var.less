@@ -7,48 +7,48 @@
 @tag-checked-background-color: @brand-color;
 
 // themes
-@tag-default-color: var(--td-tag-default-color, @bg-color-component);
-@tag-default-light-color: var(--td-tag-default-light-color, @bg-color-secondarycontainer);
-@tag-primary-color: var(--td-tag-primary-color, @brand-color);
-@tag-primary-light-color: var(--td-tag-primary-light-color, @brand-color-light);
-@tag-success-color: var(--td-tag-success-color, @success-color);
-@tag-success-light-color: var(--td-tag-success-light-color, @success-color-1);
-@tag-warning-color: var(--td-tag-warning-color, @warning-color);
-@tag-warning-light-color: var(--td-tag-warning-light-color, @warning-color-1);
-@tag-danger-color: var(--td-tag-danger-color, @error-color);
-@tag-danger-light-color: var(--td-tag-danger-light-color, @error-color-1);
+@tag-default-color: if(isdefined(@td-tag-default-color), @td-tag-default-color, @bg-color-component);
+@tag-default-light-color: if(isdefined(@td-tag-default-light-color), @td-tag-default-light-color, @bg-color-secondarycontainer);
+@tag-primary-color: if(isdefined(@td-tag-primary-color), @td-tag-primary-color, @brand-color);
+@tag-primary-light-color: if(isdefined(@td-tag-primary-light-color), @td-tag-primary-light-color, @brand-color-light);
+@tag-success-color: if(isdefined(@td-tag-success-color), @td-tag-success-color, @success-color);
+@tag-success-light-color: if(isdefined(@td-tag-success-light-color), @td-tag-success-light-color, @success-color-1);
+@tag-warning-color: if(isdefined(@td-tag-warning-color), @td-tag-warning-color, @warning-color);
+@tag-warning-light-color: if(isdefined(@td-tag-warning-light-color), @td-tag-warning-light-color, @warning-color-1);
+@tag-danger-color: if(isdefined(@td-tag-danger-color), @td-tag-danger-color, @error-color);
+@tag-danger-light-color: if(isdefined(@td-tag-danger-light-color), @td-tag-danger-light-color, @error-color-1);
 
 // variant
-@tag-outline-bg-color: var(--td-tag-outline-bg-color, @bg-color-container);
-@tag-default-font-color: var(--td-tag-default-font-color, @font-gray-1);
+@tag-outline-bg-color: if(isdefined(@td-tag-outline-bg-color), @td-tag-outline-bg-color, @bg-color-container);
+@tag-default-font-color: if(isdefined(@td-tag-default-font-color), @td-tag-default-font-color, @font-gray-1);
 
 // status
-@tag-disabled-color: var(--td-tag-disabled-color, @font-gray-4);
-@tag-disabled-background-color: var(--td-tag-disabled-background-color, @bg-color-component-disabled);
-@tag-disabled-border-color: var(--td-tag-disabled-border-color, @component-border);
+@tag-disabled-color: if(isdefined(@td-tag-disabled-color), @td-tag-disabled-color, @font-gray-4);
+@tag-disabled-background-color: if(isdefined(@td-tag-disabled-background-color), @td-tag-disabled-background-color, @bg-color-component-disabled);
+@tag-disabled-border-color: if(isdefined(@td-tag-disabled-border-color), @td-tag-disabled-border-color, @component-border);
 
 // size
-@tag-small-padding: var(--td-tag-small-padding, 6px - 1px);
-@tag-medium-padding: var(--td-tag-medium-padding, 8px - 1px);
-@tag-large-padding: var(--td-tag-large-padding, 8px - 1px);
-@tag-extra-large-padding: var(--td-tag-extra-large-padding, 16px - 1px);
+@tag-small-padding: if(isdefined(@td-tag-small-padding), @td-tag-small-padding, 6px - 1px);
+@tag-medium-padding: if(isdefined(@td-tag-medium-padding), @td-tag-medium-padding, 8px - 1px);
+@tag-large-padding: if(isdefined(@td-tag-large-padding), @td-tag-large-padding, 8px - 1px);
+@tag-extra-large-padding: if(isdefined(@td-tag-extra-large-padding), @td-tag-extra-large-padding, 16px - 1px);
 
-@tag-small-font-size: var(--td-tag-small-font-size, @font-size);
-@tag-medium-font-size: var(--td-tag-medium-font-size, @font-size-s);
-@tag-large-font-size: var(--td-tag-large-font-size, @font-size-base);
-@tag-extra-large-font-size: var(--td-tag-extra-large-font-size, @font-size-base);
+@tag-small-font-size: if(isdefined(@td-tag-small-font-size), @td-tag-small-font-size, @font-size);
+@tag-medium-font-size: if(isdefined(@td-tag-medium-font-size), @td-tag-medium-font-size, @font-size-s);
+@tag-large-font-size: if(isdefined(@td-tag-large-font-size), @td-tag-large-font-size, @font-size-base);
+@tag-extra-large-font-size: if(isdefined(@td-tag-extra-large-font-size), @td-tag-extra-large-font-size, @font-size-base);
 
-@tag-small-icon-size: var(--td-tag-small-icon-size, 12px);
-@tag-medium-icon-size: var(--td-tag-medium-icon-size, 14px);
-@tag-large-icon-size: var(--td-tag-large-icon-size, 16px);
-@tag-extra-large-icon-size: var(--td-tag-extra-large-icon-size, 16px);
+@tag-small-icon-size: if(isdefined(@td-tag-small-icon-size), @td-tag-small-icon-size, 12px);
+@tag-medium-icon-size: if(isdefined(@td-tag-medium-icon-size), @td-tag-medium-icon-size, 14px);
+@tag-large-icon-size: if(isdefined(@td-tag-large-icon-size), @td-tag-large-icon-size, 16px);
+@tag-extra-large-icon-size: if(isdefined(@td-tag-extra-large-icon-size), @td-tag-extra-large-icon-size, 16px);
 
-@tag-small-height: var(--td-tag-small-height, 20px);
-@tag-medium-height: var(--td-tag-medium-height, 24px);
-@tag-large-height: var(--td-tag-large-height, 28px);
-@tag-extra-large-height: var(--td-tag-extra-large-height, 40px);
+@tag-small-height: if(isdefined(@td-tag-small-height), @td-tag-small-height, 20px);
+@tag-medium-height: if(isdefined(@td-tag-medium-height), @td-tag-medium-height, 24px);
+@tag-large-height: if(isdefined(@td-tag-large-height), @td-tag-large-height, 28px);
+@tag-extra-large-height: if(isdefined(@td-tag-extra-large-height), @td-tag-extra-large-height, 40px);
 
-@tag-square-border-radius: var(--td-tag-square-border-radius, 4px);
-@tag-round-border-radius: var(--td-tag-round-border-radius, 999px);
-@tag-mark-border-radius: var(--td-tag-mark-border-radius, @tag-round-border-radius);
-@tag-close-icon-color: var(--td-tag-close-icon-color, @font-gray-3);
+@tag-square-border-radius: if(isdefined(@td-tag-square-border-radius), @td-tag-square-border-radius, 4px);
+@tag-round-border-radius: if(isdefined(@td-tag-round-border-radius), @td-tag-round-border-radius, 999px);
+@tag-mark-border-radius: if(isdefined(@td-tag-mark-border-radius), @td-tag-mark-border-radius, @tag-round-border-radius);
+@tag-close-icon-color: if(isdefined(@td-tag-close-icon-color), @td-tag-close-icon-color, @font-gray-3);

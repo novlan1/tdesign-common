@@ -1,15 +1,15 @@
-@badge-text-color: var(--td-badge-text-color, @font-white-1);
-@badge-color: var(--td-badge-bg-color, @error-color);
-@badge-font-size: var(--td-badge-font-size, @font-size-xs);
-@badge-basic-height: var(--td-badge-basic-height, 16px);
-@badge-basic-width: var(--td-badge-basic-width, 16px);
-@badge-basic-padding: var(--td-badge-basic-padding, 4px);
-@badge-font-weight: var(--td-badge-font-weight, 600);
-@badge-border-radius: var(--td-badge-border-radius, 2px);
-@border-bubble-border-radius: var(--td-badge-bubble-border-radius, 10px 10px 10px 1px);
-@badge-dot-size: var(--td-badge-dot-size, 8px);
+@badge-text-color: if(isdefined(@td-badge-text-color), @td-badge-text-color, @font-white-1);
+@badge-color: if(isdefined(@td-badge-bg-color), @td-badge-bg-color, @error-color);
+@badge-font-size: if(isdefined(@td-badge-font-size), @td-badge-font-size, @font-size-xs);
+@badge-basic-height: if(isdefined(@td-badge-basic-height), @td-badge-basic-height, 16px);
+@badge-basic-width: if(isdefined(@td-badge-basic-width), @td-badge-basic-width, 16px);
+@badge-basic-padding: if(isdefined(@td-badge-basic-padding), @td-badge-basic-padding, 4px);
+@badge-font-weight: if(isdefined(@td-badge-font-weight), @td-badge-font-weight, 600);
+@badge-border-radius: if(isdefined(@td-badge-border-radius), @td-badge-border-radius, 2px);
+@border-bubble-border-radius: if(isdefined(@td-badge-bubble-border-radius), @td-badge-bubble-border-radius, 10px 10px 10px 1px);
+@badge-dot-size: if(isdefined(@td-badge-dot-size), @td-badge-dot-size, 8px);
 
 // large
-@badge-large-font-size: var(--td-badge-large-font-size, @font-size-s);
-@badge-large-height: var(--td-badge-large-height, 20px);
-@badge-large-padding: var(--td-badge-large-padding, 5px);
+@badge-large-font-size: if(isdefined(@td-badge-large-font-size), @td-badge-large-font-size, @font-size-s);
+@badge-large-height: if(isdefined(@td-badge-large-height), @td-badge-large-height, 20px);
+@badge-large-padding: if(isdefined(@td-badge-large-padding), @td-badge-large-padding, 5px);

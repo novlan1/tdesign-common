@@ -2,6 +2,6 @@
 @popup-position: ~"@{popup}--position";
 @popup-transition: ~"@{popup}--transition";
 
-@popup-bg-color: var(--td-popup-bg-color, @bg-color-container);
-@popup-border-radius: var(--td-popup-border-radius, @radius-extra-large);
-@popup-close-btn-color: var(--td-popup-close-btn-color, @text-color-primary);
+@popup-bg-color: if(isdefined(@td-popup-bg-color), @td-popup-bg-color, @bg-color-container);
+@popup-border-radius: if(isdefined(@td-popup-border-radius), @td-popup-border-radius, @radius-extra-large);
+@popup-close-btn-color: if(isdefined(@td-popup-close-btn-color), @td-popup-close-btn-color, @text-color-primary);

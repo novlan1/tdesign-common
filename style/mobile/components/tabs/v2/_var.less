@@ -2,29 +2,29 @@
 @item: ~"@{tabs}__item";
 
 //字号
-@tab-font-size: var(--td-tab-font-size, 14px);
+@tab-font-size: if(isdefined(@td-tab-font-size), @td-tab-font-size, 14px);
 @tab-font-medium: @font-size-base;
 @tab-font-large: @font-size-m;
-@tab-nav-bg-color: var(--td-tab-nav-bg-color, @bg-color-container);
+@tab-nav-bg-color: if(isdefined(@td-tab-nav-bg-color), @td-tab-nav-bg-color, @bg-color-container);
 
-@tab-item-height: var(--td-tab-item-height, 48px);
-@tab-item-vertical-height: var(--td-tab-item-vertical-height, 54px);
-@tab-item-vertical-width: var(--td-tab-item-vertical-width, 104px);
+@tab-item-height: if(isdefined(@td-tab-item-height), @td-tab-item-height, 48px);
+@tab-item-vertical-height: if(isdefined(@td-tab-item-vertical-height), @td-tab-item-vertical-height, 54px);
+@tab-item-vertical-width: if(isdefined(@td-tab-item-vertical-width), @td-tab-item-vertical-width, 104px);
 
-@tab-item-color: var(--td-tab-item-color, @text-color-primary);
-@tab-item-active-color: var(--td-tab-item-active-color, @brand-color);
-@tab-item-disabled-color: var(--td-tab-item-disabled-color, @text-color-disabled);
-@tab-border-color: var(--td-tab-border-color, @component-stroke);
+@tab-item-color: if(isdefined(@td-tab-item-color), @td-tab-item-color, @text-color-primary);
+@tab-item-active-color: if(isdefined(@td-tab-item-active-color), @td-tab-item-active-color, @brand-color);
+@tab-item-disabled-color: if(isdefined(@td-tab-item-disabled-color), @td-tab-item-disabled-color, @text-color-disabled);
+@tab-border-color: if(isdefined(@td-tab-border-color), @td-tab-border-color, @component-stroke);
 
 // track
-@tab-track-color: var(--td-tab-track-color, @brand-color);
-@tab-track-thickness: var(--td-tab-track-thickness, 3px);
-@tab-track-width: var(--td-tab-track-width, 16px);
-@tab-track-radius: var(--td-tab-track-radius, 4px);
+@tab-track-color: if(isdefined(@td-tab-track-color), @td-tab-track-color, @brand-color);
+@tab-track-thickness: if(isdefined(@td-tab-track-thickness), @td-tab-track-thickness, 3px);
+@tab-track-width: if(isdefined(@td-tab-track-width), @td-tab-track-width, 16px);
+@tab-track-radius: if(isdefined(@td-tab-track-radius), @td-tab-track-radius, 4px);
 
 // theme = tag
-@tab-item-tag-height: var(--td-tab-item-tag-height, 32px);
-@tab-item-tag-bg: var(--td-tab-item-tag-bg, @bg-color-secondarycontainer);
-@tab-item-tag-active-bg: var(--td-tab-item-tag-active-bg, @brand-color-light);
+@tab-item-tag-height: if(isdefined(@td-tab-item-tag-height), @td-tab-item-tag-height, 32px);
+@tab-item-tag-bg: if(isdefined(@td-tab-item-tag-bg), @td-tab-item-tag-bg, @bg-color-secondarycontainer);
+@tab-item-tag-active-bg: if(isdefined(@td-tab-item-tag-active-bg), @td-tab-item-tag-active-bg, @brand-color-light);
 
-@tab-icon-size: var(--td-tab-icon-size, 16px);
+@tab-icon-size: if(isdefined(@td-tab-icon-size), @td-tab-icon-size, 16px);

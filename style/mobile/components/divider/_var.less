@@ -1,5 +1,5 @@
-@divider-color: var(--td-divider-color, @bg-color-component);
-@divider-content-color: var(--td-divider-content-color, @text-color-placeholder);
-@divider-content-font-size: var(--td-divider-content-font-size, 12px);
-@divider-content-line-height: var(--td-divider-content-line-height, 20px);
-@divider-content-line-style: var(--td-divider-content-line-style, solid);
+@divider-color: if(isdefined(@td-divider-color), @td-divider-color, @bg-color-component);
+@divider-content-color: if(isdefined(@td-divider-content-color), @td-divider-content-color, @text-color-placeholder);
+@divider-content-font-size: if(isdefined(@td-divider-content-font-size), @td-divider-content-font-size, 12px);
+@divider-content-line-height: if(isdefined(@td-divider-content-line-height), @td-divider-content-line-height, 20px);
+@divider-content-line-style: if(isdefined(@td-divider-content-line-style), @td-divider-content-line-style, solid);

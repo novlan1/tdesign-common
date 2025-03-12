@@ -31,9 +31,9 @@
   @text-color-primary
 );
 // 方形/圆形底倒计时文本颜色
-@countdown-text-color: var(--td-countdown-round-color, @text-color-anti);
+@countdown-text-color: if(isdefined(@td-countdown-round-color), @td-countdown-round-color, @text-color-anti);
 // 方形/圆形底背景颜色
-@countdown-bg-color: var(--td-countdown-bg-color, @error-color-6);
+@countdown-bg-color: if(isdefined(@td-countdown-bg-color), @td-countdown-bg-color, @error-color-6);
 // 带方形底倒计时圆角大小
 @countdown-square-border-radius: var(
   --td-countdown-square-border-radius,

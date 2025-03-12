@@ -8,11 +8,11 @@
 @back-top-fixed-right: @spacer;
 @back-top-fixed-bottom: @spacer-2;
 
-@back-top-round-color: var(--td-back-top-round-color, @font-gray-1);
-@back-top-round-bg-color: var(--td-back-top-round-bg-color, @font-white-1);
-@back-top-round-border-color: var(--td-back-top-round-border-color, @component-border);
-@back-top-round-dark-border-color: var(--td-back-top-round-border-color, @gray-color-9);
-@back-top-round-border-radius: var(--td-back-top-round-border-radius, @radius-circle);
-@back-top-round-dark-color: var(--td-back-top-round-dark-color, @font-white-1);
-@back-top-round-dark-bg-color: var(--td-back-top-round-dark-bg-color, @gray-color-14);
-@back-top-half-round-border-radius: var(--td-back-top-half-round-border-radius, @radius-round);
+@back-top-round-color: if(isdefined(@td-back-top-round-color), @td-back-top-round-color, @font-gray-1);
+@back-top-round-bg-color: if(isdefined(@td-back-top-round-bg-color), @td-back-top-round-bg-color, @font-white-1);
+@back-top-round-border-color: if(isdefined(@td-back-top-round-border-color), @td-back-top-round-border-color, @component-border);
+@back-top-round-dark-border-color: if(isdefined(@td-back-top-round-border-color), @td-back-top-round-border-color, @gray-color-9);
+@back-top-round-border-radius: if(isdefined(@td-back-top-round-border-radius), @td-back-top-round-border-radius, @radius-circle);
+@back-top-round-dark-color: if(isdefined(@td-back-top-round-dark-color), @td-back-top-round-dark-color, @font-white-1);
+@back-top-round-dark-bg-color: if(isdefined(@td-back-top-round-dark-bg-color), @td-back-top-round-dark-bg-color, @gray-color-14);
+@back-top-half-round-border-radius: if(isdefined(@td-back-top-half-round-border-radius), @td-back-top-half-round-border-radius, @radius-round);

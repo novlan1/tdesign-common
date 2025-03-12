@@ -1,15 +1,15 @@
-@collapse-header-text-color: var(--td-collapse-header-text-color, @text-color-primary);
-@collapse-content-text-color: var(--td-collapse-content-text-color, @text-color-primary);
-@collapse-header-text-disabled-color: var(--td-collapse-header-text-disabled-color, @text-color-disabled);
-@collapse-icon-color: var(--td-collapse-icon-color, @text-color-placeholder);
+@collapse-header-text-color: if(isdefined(@td-collapse-header-text-color), @td-collapse-header-text-color, @text-color-primary);
+@collapse-content-text-color: if(isdefined(@td-collapse-content-text-color), @td-collapse-content-text-color, @text-color-primary);
+@collapse-header-text-disabled-color: if(isdefined(@td-collapse-header-text-disabled-color), @td-collapse-header-text-disabled-color, @text-color-disabled);
+@collapse-icon-color: if(isdefined(@td-collapse-icon-color), @td-collapse-icon-color, @text-color-placeholder);
 
 // font-size
-@collapse-title-font-size: var(--td-collapse-title-font-size, @font-size-m);
-@collapse-extra-font-size: var(--td-collapse-extra-font-size, @font-size-m);
-@collapse-content-font-size: var(--td-collapse-content-font-size, @font-size-base);
+@collapse-title-font-size: if(isdefined(@td-collapse-title-font-size), @td-collapse-title-font-size, @font-size-m);
+@collapse-extra-font-size: if(isdefined(@td-collapse-extra-font-size), @td-collapse-extra-font-size, @font-size-m);
+@collapse-content-font-size: if(isdefined(@td-collapse-content-font-size), @td-collapse-content-font-size, @font-size-base);
 
-@collapse-content-padding: var(--td-collapse-content-padding, 16px);
-@collapse-content-line-height: var(--td-collapse-content-line-height, 1.5);
-@collapse-border-color: var(--td-collapse-border-color, @border-color);
+@collapse-content-padding: if(isdefined(@td-collapse-content-padding), @td-collapse-content-padding, 16px);
+@collapse-content-line-height: if(isdefined(@td-collapse-content-line-height), @td-collapse-content-line-height, 1.5);
+@collapse-border-color: if(isdefined(@td-collapse-border-color), @td-collapse-border-color, @border-color);
 
-@collapse-panel-bg-color: var(--td-collapse-panel-bg-color, @bg-color-container);
+@collapse-panel-bg-color: if(isdefined(@td-collapse-panel-bg-color), @td-collapse-panel-bg-color, @bg-color-container);

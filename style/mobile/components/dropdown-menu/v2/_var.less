@@ -1,8 +1,8 @@
-@dropdown-menu-bg-color: var(--td-dropdown-menu-bg-colorm, @bg-color-container);
-@dropdown-menu-color: var(--td-dropdown-menu-colorm, @text-color-primary);
-@dropdown-menu-active-color: var(--td-dropdown-menu-active-colorm, @brand-color);
-@dropdown-menu-disabled-color: var(--td-dropdown-menu-disabled-colorm, @text-color-disabled);
-@dropdown-menu-font-size: var(--td-dropdown-menu-font-sizem, 14px);
-@dropdown-menu-icon-size: var(--td-dropdown-menu-icon-sizem, 24px);
+@dropdown-menu-bg-color: if(isdefined(@td-dropdown-menu-bg-colorm), @td-dropdown-menu-bg-colorm, @bg-color-container);
+@dropdown-menu-color: if(isdefined(@td-dropdown-menu-colorm), @td-dropdown-menu-colorm, @text-color-primary);
+@dropdown-menu-active-color: if(isdefined(@td-dropdown-menu-active-colorm), @td-dropdown-menu-active-colorm, @brand-color);
+@dropdown-menu-disabled-color: if(isdefined(@td-dropdown-menu-disabled-colorm), @td-dropdown-menu-disabled-colorm, @text-color-disabled);
+@dropdown-menu-font-size: if(isdefined(@td-dropdown-menu-font-sizem), @td-dropdown-menu-font-sizem, 14px);
+@dropdown-menu-icon-size: if(isdefined(@td-dropdown-menu-icon-sizem), @td-dropdown-menu-icon-sizem, 24px);
 
 @dropdownMenu: ~"@{prefix}-dropdown-menu";

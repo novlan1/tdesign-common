@@ -1,4 +1,4 @@
-@image-color: var(--td-image-color, @text-color-placeholder);
-@image-loading-bg-color: var(--td-image-loading-bg-color, @bg-color-secondarycontainer);
-@image-loading-color: var(--td-image-loading-color, @text-color-placeholder);
-@image-round-radius: var(--td-image-round-radius, @radius-default);
+@image-color: if(isdefined(@td-image-color), @td-image-color, @text-color-placeholder);
+@image-loading-bg-color: if(isdefined(@td-image-loading-bg-color), @td-image-loading-bg-color, @bg-color-secondarycontainer);
+@image-loading-color: if(isdefined(@td-image-loading-color), @td-image-loading-color, @text-color-placeholder);
+@image-round-radius: if(isdefined(@td-image-round-radius), @td-image-round-radius, @radius-default);

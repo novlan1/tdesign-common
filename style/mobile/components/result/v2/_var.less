@@ -1,17 +1,17 @@
 @result-icon-font-size: 80px;
 
-@result-title-font-size: var(--td-result-title-font-size, @font-size-xl);
-@result-title-line-height: var(--td-result-title-line-height, 28px);
-@result-title-color: var(--td-result-title-color, @text-color-primary);
+@result-title-font-size: if(isdefined(@td-result-title-font-size), @td-result-title-font-size, @font-size-xl);
+@result-title-line-height: if(isdefined(@td-result-title-line-height), @td-result-title-line-height, 28px);
+@result-title-color: if(isdefined(@td-result-title-color), @td-result-title-color, @text-color-primary);
 
-@result-description-font-size: var(--td-result-description-font-size, @font-size-base);
-@result-description-line-height: var(--td-result-description-line-height, 22px);
-@result-description-color: var(--td-result-description-color, @text-color-secondary);
+@result-description-font-size: if(isdefined(@td-result-description-font-size), @td-result-description-font-size, @font-size-base);
+@result-description-line-height: if(isdefined(@td-result-description-line-height), @td-result-description-line-height, 22px);
+@result-description-color: if(isdefined(@td-result-description-color), @td-result-description-color, @text-color-secondary);
 
-@result-icon-default-color: var(--td-result-icon-default-color, @brand-color);
-@result-icon-success-color: var(--td-result-icon-success-color, @success-color);
-@result-icon-warning-color: var(--td-result-icon-warning-color, @warning-color);
-@result-icon-error-color: var(--td-result-icon-error-color, @error-color);
+@result-icon-default-color: if(isdefined(@td-result-icon-default-color), @td-result-icon-default-color, @brand-color);
+@result-icon-success-color: if(isdefined(@td-result-icon-success-color), @td-result-icon-success-color, @success-color);
+@result-icon-warning-color: if(isdefined(@td-result-icon-warning-color), @td-result-icon-warning-color, @warning-color);
+@result-icon-error-color: if(isdefined(@td-result-icon-error-color), @td-result-icon-error-color, @error-color);
 
-@result-title-margin-top: var(--td-result-title-margin-top, @spacer-1);
-@result-description-margin-top: var(--td-result-description-margin-top, @spacer);
+@result-title-margin-top: if(isdefined(@td-result-title-margin-top), @td-result-title-margin-top, @spacer-1);
+@result-description-margin-top: if(isdefined(@td-result-description-margin-top), @td-result-description-margin-top, @spacer);

@@ -1,13 +1,13 @@
-@indexes-sidebar-color: var(--td-indexes-sidebar-color, @text-color-primary);
-@indexes-sidebar-item-size: var(--td-indexes-sidebar-item-size, 20px);
-@indexes-sidebar-font-size: var(--td-indexes-sidebar-font-size, 12px);
-@indexes-sidebar-line-height: var(--td-indexes-sidebar-line-height, 20px);
-@indexes-sidebar-active-color: var(--td-indexes-sidebar-active-color, @text-color-anti);
-@indexes-sidebar-active-bg-color: var(--td-indexes-sidebar-active-bg-color, @brand-color);
-@indexes-sidebar-right: var(--td-indexes-sidebar-right, 8px);
+@indexes-sidebar-color: if(isdefined(@td-indexes-sidebar-color), @td-indexes-sidebar-color, @text-color-primary);
+@indexes-sidebar-item-size: if(isdefined(@td-indexes-sidebar-item-size), @td-indexes-sidebar-item-size, 20px);
+@indexes-sidebar-font-size: if(isdefined(@td-indexes-sidebar-font-size), @td-indexes-sidebar-font-size, 12px);
+@indexes-sidebar-line-height: if(isdefined(@td-indexes-sidebar-line-height), @td-indexes-sidebar-line-height, 20px);
+@indexes-sidebar-active-color: if(isdefined(@td-indexes-sidebar-active-color), @td-indexes-sidebar-active-color, @text-color-anti);
+@indexes-sidebar-active-bg-color: if(isdefined(@td-indexes-sidebar-active-bg-color), @td-indexes-sidebar-active-bg-color, @brand-color);
+@indexes-sidebar-right: if(isdefined(@td-indexes-sidebar-right), @td-indexes-sidebar-right, 8px);
 
-@indexes-sidebar-tips-size: var(--td-indexes-sidebar-tips-size, 48px);
-@indexes-sidebar-tips-font-size: var(--td-indexes-sidebar-tips-font-size, 20px);
-@indexes-sidebar-tips-color: var(--td-indexes-sidebar-tips-color, @brand-color);
-@indexes-sidebar-tips-bg-color: var(--td-indexes-sidebar-tips-bg-color, @brand-color-light);
-@indexes-sidebar-tips-right: var(--td-indexes-sidebar-tips-right, 38px);
+@indexes-sidebar-tips-size: if(isdefined(@td-indexes-sidebar-tips-size), @td-indexes-sidebar-tips-size, 48px);
+@indexes-sidebar-tips-font-size: if(isdefined(@td-indexes-sidebar-tips-font-size), @td-indexes-sidebar-tips-font-size, 20px);
+@indexes-sidebar-tips-color: if(isdefined(@td-indexes-sidebar-tips-color), @td-indexes-sidebar-tips-color, @brand-color);
+@indexes-sidebar-tips-bg-color: if(isdefined(@td-indexes-sidebar-tips-bg-color), @td-indexes-sidebar-tips-bg-color, @brand-color-light);
+@indexes-sidebar-tips-right: if(isdefined(@td-indexes-sidebar-tips-right), @td-indexes-sidebar-tips-right, 38px);
